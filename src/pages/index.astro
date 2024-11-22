@@ -12,7 +12,7 @@ import BentoCard from "../components/BentoCard.astro";
   <main>
     <SectionComponents class="grid  pt-20  relative">
       <div
-        class="size-[600px] bg-esmeralda100/5 circulodesbanecidoxd backdrop-blur-3xl"
+        class="fixeado size-[600px] bg-esmeralda100/5 circulodesbanecidoxd backdrop-blur-3xl "
       >
       </div>
       <section class="grid grid-cols-1 gap-4 justify-center md:grid-cols-2 items-center">
@@ -49,6 +49,11 @@ import BentoCard from "../components/BentoCard.astro";
 </Layout>
 
 <style>
+  @media (max-width: 760px){
+    .fixeado{
+      width: 100%;
+    }
+  }
   .bgafter::after {
     content: "";
     position: absolute;
