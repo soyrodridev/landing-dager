@@ -1,1 +1,32 @@
-<p>estoy es un footer</p>
+---
+import Logo from "./Logo.astro";
+import SectionComponents from "./SectionComponents.astro";
+---
+
+<footer class="bg-[#121312] w-full">
+    <SectionComponents class="grid md:h-[50dvh] md:grid-cols-2 py-8 gap-2">
+        <section class="md:bg-dager bg-cover h-full">
+            <div>
+                <Logo />
+            </div>
+        </section>
+        <form class="flex flex-col gap-4" >
+            <h2 class="text-4xl uppercase font-bold pl-5 relative punto after:shadow after:shadow-esmeralda100">Contactame</h2>
+            <div class="flex flex-col">
+                <label for="name" class="text-lg">Nombre Completo</label>
+                <input type="text" placeholder="Ingresa tu nombre y apellido" class="py-2 px-2 bg-gris rounded-sm outline-none" maxlength="50" required>
+            </div>
+            <div class="flex flex-col">
+                <label for="mail" class="text-lg">Email</label>
+                <input type="text" placeholder="Ingresa tu mail" class="py-2 px-2 bg-gris rounded-sm outline-none" maxlength="100" required>
+            </div>
+            <div class="flex flex-col">
+                <label for="msg" class="text-lg">Mensaje</label>
+                <textarea name="" id="msg" class="py-2 px-2 bg-gris rounded-sm outline-none h-32 max-h-44" maxlength="200" required></textarea>
+            </div>
+            <div class="flex justify-end">
+                <button class="bg-esmeralda200 text-esmeralda50 text-lg px-14 hover:bg-esmeralda150 py-2 rounded-sm " type="submit">Enviar</button>
+            </div>
+        </form>
+    </SectionComponents>
+</footer>
