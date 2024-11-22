@@ -1,0 +1,37 @@
+---
+import Twitch from "./Twitch.astro";
+interface Props {
+  bgimage: string;
+  gridNumber: string;
+  href: string;
+}
+
+const { href, bgimage, gridNumber } = Astro.props;
+---
+
+<div class={`relative ${gridNumber} h-[250px] overflow-hidden backdrop-blur-xl`}>
+  <a href={href} target="_blank" class="relative w-full h-full block">
+    <div
+      class={`${bgimage} bg-cover bg-center bgafter cursor-pointer transition-transform duration-500 hover:scale-110 w-full h-full md:saturate-0 hover:saturate-100 relative`}
+    >
+      <slot name="icon" />
+    </div>
+
+    <div class="absolute inset-0 flex items-center justify-center p-4 text-white pointer-events-none">
+      <slot />
+    </div>
+  </a>
+</div>
+
+<style>
+  .bgafter::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 30%;
+    background: linear-gradient(to top, #1d1f1e 0%, rgba(29, 31, 30, 0) 100%);
+    pointer-events: none;
+  }
+</style>

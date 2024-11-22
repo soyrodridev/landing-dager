@@ -1,0 +1,51 @@
+---
+import Menu from "./Menu.astro"
+---
+<header class="header-container" id="header-bro">
+  <nav class="max-w-5xl m-auto flex justify-between items-center px-4 h-20">
+    
+    <picture class="flex flex-grow basis-0 justify-start">
+        <img src="/Dager.svg" alt="DOT DAGER" class="h-14">
+    </picture>
+
+    <ul class="hidden md:flex gap-4 items-center text-lg">
+      <li><a href="#" class="text-esmeralda150 font-medium">Inicio</a></li>
+      <li><a href="#" class="hover:text-esmeralda150">Sobre mi</a></li>
+      <li><a href="#" class="hover:text-esmeralda150">Mis intereses</a></li>
+    </ul>
+
+    <button class="flex flex-grow basis-0 justify-end"
+      ><a href="#" class="bg-esmeralda200 hover:bg-esmeralda150 text-esmeralda50 px-8 py-2 text-base md:text-base font-semibold rounded-2xl ">Contacto</a></button
+    >
+    <button class="md:hidden">
+      <Menu class="size-10 stroke-slate-200 ml-4"/>
+    </button>
+  </nav>
+</header>
+<style>
+  .header-container {
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+  .header-magic{
+    background: linear-gradient(rgba(24, 24, 24, 1), rgba(24, 24, 24, 0));
+    backdrop-filter: blur(1px);
+    transition: 1s ease ease-in-out;
+  }
+</style>
+
+<script>
+  window.addEventListener("scroll", () => {
+    const scrollY = window.scrollY;
+    const header = document.getElementById("header-bro");
+
+    if (scrollY > 80) {
+      header?.classList.add("header-magic");
+    } else{
+        header?.classList.remove("header-magic");
+    }
+  });
+</script>

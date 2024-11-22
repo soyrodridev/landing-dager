@@ -1,0 +1,71 @@
+---
+import Arrow from "./Arrow.astro";
+import CardBento from "./CardBento.astro";
+import GitHub from "./GitHub.astro";
+import InstagramIcon from "./InstagramIcon.astro";
+import Linkedin from "./Linkedin.astro";
+import Twitch from "./Twitch.astro";
+import YoutubeIcon from "./YoutubeIcon.astro";
+---
+
+<div class="grid grid-cols-1 mt-16 md:mt-0 md:grid-cols-12 w-full gap-4">
+    <CardBento
+  gridNumber="md:col-span-6"
+  bgimage="bg-github"
+  href="https://github.com/MarianoVilla"
+>
+  <div slot="icon">
+    <GitHub class="size-52 absolute -left-8 -bottom-10 transition-all duration-500" />
+    <div class="size-52 bg-gris absolute rounded-full blur-2xl -right-16 -bottom-24"></div>
+  </div>
+  <h2 class="text-esmeralda100 font-bold text-3xl absolute bottom-4 right-4">GITHUB</h2>
+</CardBento>
+
+    <CardBento
+  gridNumber="md:col-span-6"
+  bgimage="bg-linkedin"
+  href="https://www.linkedin.com/in/mariano-luis-villa/?locale=en_US"
+>
+<div slot="icon">
+    <Linkedin class="size-52 absolute -left-8 -bottom-10 transition-all duration-500" />
+    <div class="size-52 bg-gris absolute rounded-full blur-2xl -right-10 -bottom-24"></div>
+  </div>
+  <h2 class="text-esmeralda100 font-bold text-3xl absolute bottom-4 right-4">LINKEDIN</h2>
+</CardBento>
+    <CardBento
+  gridNumber="md:col-span-4"
+  bgimage="bg-twitch"
+  href="https://www.twitch.tv/dagerxiv"
+>
+<div slot="icon">
+    <Twitch class="size-40 absolute -left-8 -bottom-10 transition-all duration-500" />
+    <div class="size-52 bg-gris absolute rounded-full blur-2xl -right-10 -bottom-24"></div>
+  </div>
+  <h2 class="text-esmeralda100 font-bold text-3xl absolute bottom-4 right-4">TWITCH</h2>
+</CardBento>
+    <CardBento
+  gridNumber="md:col-span-4"
+  bgimage="bg-youtube"
+  href="https://www.youtube.com/@DotDager"
+>
+<div slot="icon">
+    <YoutubeIcon class="size-40 absolute -left-8 -bottom-10 transition-all duration-500" />
+    <div class="size-52 bg-gris absolute rounded-full blur-2xl -right-10 -bottom-24"></div>
+  </div>
+  <h2 class="text-esmeralda100 font-bold text-3xl absolute bottom-4 right-4">YOUTUBE</h2>
+</CardBento>
+    <CardBento
+  gridNumber="md:col-span-4"
+  bgimage="bg-instagram"
+  href="https://www.instagram.com/dager.32/"
+>
+<div slot="icon">
+    <InstagramIcon class="size-40 absolute -left-8 -bottom-10 transition-all duration-500" />
+    <div class="size-52 bg-gris absolute rounded-full blur-2xl -right-10 -bottom-24"></div>
+  </div>
+  <h2 class="text-esmeralda100 font-bold text-3xl absolute bottom-4 right-4">INSTAGRAM</h2>
+</CardBento>
+    
+    
+</div>
+

@@ -1,0 +1,14 @@
+---
+interface Props {
+	icon: any;
+	name: string;
+	href: string;
+}
+
+const { href, name, icon: icon } = Astro.props;
+---
+
+    <button class="bg-gris px-3 py-2 rounded-full border border-esmeralda50/15">
+        <a href={href} class="flex gap-2 items-center">
+            <icon class="size-6"/> {name}
+        </a>
