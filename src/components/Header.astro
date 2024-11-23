@@ -17,12 +17,32 @@ import Menu from "./Menu.astro"
     <button class="flex flex-grow basis-0 justify-end"
       ><a href="#contacto" class="bg-esmeralda200 hover:bg-esmeralda150 text-esmeralda50 px-8 py-2 text-base md:text-base font-semibold rounded-2xl ">Contacto</a></button
     >
-    <button class="md:hidden">
+    <button class="md:hidden" onclick="document.querySelector('.header-container').classList.toggle('menu-open')">
       <Menu class="size-10 stroke-slate-200 ml-4"/>
     </button>
   </nav>
 </header>
 <style>
+  @media screen and ( max-width: 768px){
+    ul{
+      position: fixed;
+      padding-top: 5rem;
+      backdrop-filter: blur(5px);
+      right: 0;
+      flex-direction: column;
+      align-items: end;
+      padding-right: 1rem;
+      background: #000;
+      z-index: -1;
+      width: 60%;
+      bottom: 0;
+      top: 0;
+
+    }
+    .menu-open ul {
+    display: flex; /* Mostrar menú al abrirlo */
+  }
+  }
   .header-container {
     position: fixed;
     z-index: 49;
