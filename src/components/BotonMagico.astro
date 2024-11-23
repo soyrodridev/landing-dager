@@ -1,0 +1,45 @@
+<button id="iniciar" class=" fixed bg-gris md:flex gap-2 items-center px-3 py-2 rounded-full border border-esmeralda50/15 text-xl bottom-14 right-14 z-20" >
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler size-8 icons-tabler-outline icon-tabler-device-gamepad-2">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+        <path d="M12 5h3.5a5 5 0 0 1 0 10h-5.5l-4.015 4.227a2.3 2.3 0 0 1 -3.923 -2.035l1.634 -8.173a5 5 0 0 1 4.904 -4.019h3.4z" />
+        <path d="M14 15l4.07 4.284a2.3 2.3 0 0 0 3.925 -2.023l-1.6 -8.232" />
+        <path d="M8 9v2" />
+        <path d="M7 10h2" />
+        <path d="M14 10h2" />
+      </svg>
+
+      <span class="hidden md:block">Jugar</span>
+</button>
+
+
+<section class="hidden fixed top-0 left-0 right-0 bottom-0 md:right-8 md:bottom-36 z-50" id="iniciarjuego">
+    <iframe
+  title="juego para jugar"
+  class="w-full h-full md:w-[300px] md:[600px]"
+  src="https://tbot.xyz/lumber/">
+</iframe>
+<button class="fixed top-4 right-4 z-50 md:hidden bg-slate-900/50 p-4 rounded-full" id="cerrar">
+    <svg    width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon stroke-esmeralda100 icon-tabler icons-tabler-outline icon-tabler-square-x"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 5a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14z" /><path d="M9 9l6 6m0 -6l-6 6" /></svg>
+</button>
+
+</section>
+
+
+
+<script>
+    const playButton = document.getElementById("iniciar")
+    const mostrarPantalla = document.getElementById("iniciarjuego")
+    const cerrar = document.getElementById("cerrar")
+    
+
+
+
+    playButton?.addEventListener("click", () =>{
+        mostrarPantalla?.classList.toggle("hidden")
+    })
+
+    cerrar?.addEventListener("click", () =>{
+        mostrarPantalla?.classList.add("hidden")
+    })
+
+</script>

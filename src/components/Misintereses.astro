@@ -1,137 +1,52 @@
 ---
 import SectionComponents from "./SectionComponents.astro";
-import YoutubeIcon from "./YoutubeIcon.astro";
 ---
 
-<SectionComponents class="mt-8 relative">
-  
-  <h2
-    class="text-4xl uppercase font-bold pl-5 relative punto after:shadow after:shadow-esmeralda100"
-  >
+<SectionComponents class="mt-8 relative overflow-hidden">
+  <h2 class="text-4xl uppercase font-bold pl-5 relative punto after:shadow after:shadow-esmeralda100">
     Mis intereses
   </h2>
 
-  <div class="galeria my-8">
-    <div class="overflow-hidden bg-pepino img-galery relative bgafter">
-      <div class="w-full h-full grid-contain">
-        <div class="grid place-content-center">
-          <h2 class="text-2xl font-medium mostrar">
-            Amo los pepinos: frescos, crujientes y siempre deliciosos. 🥒😮‍💨
-          </h2>
-        </div>
-        <h3
-          class="font-bold uppercase text-esmeralda100 pb-16 text-center text-2xl"
-        >
-          pepinos
-        </h3>
-      </div>
-    </div>
-    <div class="overflow-hidden bg-guitarra img-galery relative bgafter">
-      <div class="w-full h-full grid-contain">
-        <div class="grid place-content-center">
-          <h2 class="text-2xl font-medium mostrar">
-            Me apasiona tocar la guitarra; es mi forma de conectar con la música
-            y expresarme. 🎸
-          </h2>
-        </div>
-        <h3
-          class="font-bold uppercase text-esmeralda100 pb-16 text-center text-2xl"
-        >
-          La Guitarra
-        </h3>
-      </div>
-    </div>
-    <div class="overflow-hidden bg-programador img-galery relative bgafter">
-      <div class="w-full h-full grid-contain">
-        <div class="grid place-content-center">
-          <h2 class="text-2xl font-medium mostrar">
-            Me encanta transformar ideas en realidad 🧑‍💻
-          </h2>
-        </div>
-        <h3
-          class="font-bold uppercase text-esmeralda100 pb-16 text-center text-2xl"
-        >
-          Programacion
-        </h3>
-      </div>
-    </div>
-    <div class="overflow-hidden bg-gatito img-galery relative bgafter">
-      <div class="w-full h-full grid-contain">
-        <div class="grid place-content-center">
-          <h2 class="text-2xl font-medium mostrar">
-            Los peludos son mi debilidad, con sus ojitos traviesos y sus
-            ronroneos suaves que hacen que todo sea más mágico. 🐾💖
-          </h2>
-        </div>
-        <h3
-          class="font-bold uppercase text-esmeralda100 pb-16 text-center text-2xl"
-        >
-          Gatitos
-        </h3>
-      </div>
-    </div>
+ <section id="intereses" class="flexx md:grid md:grid-cols-12 md:grid-rows-3 gap-4 w-full my-4">
+  <div class="relative md:col-span-8  md:row-span-2  md:w-full w-60 md:h-full h-[250px]">
+    <div class="bg-pepino bg-cover bg-center w-full h-full bgafter"></div>
   </div>
-</SectionComponents>
 
-<style>
-
-
-@media (min-width: 768px){
-    .galeria {
-    display: flex;
-    width: 100%;
-    height: 40rem;
-    gap: 2rem;
-  }
-  .img-galery {
-    width: 0;
-    flex-grow: 1;
-    opacity: 0.8;
-    transition: 0.5s ease;
-    border-radius: 30px;
-    background-position: center;
-  }
+  <div class="relative md:col-span-4 md:row-span-3  md:w-full w-60 md:h-full h-[250px]">
+    <div class="bg-guitarra bg-cover bg-center w-full h-full bgafter"></div>
+  </div>
   
-  .img-galery:hover {
-    width: 600px;
-    opacity: 1;
-    filter: contrast(120%);
-    background-size: cover;
-    cursor: pointer;
-  }
-  .mostrar {
-    display: none;
+  <div class="relative md:col-span-5   md:w-full w-60 h-[250px]">
+    <div class="bg-programador bg-cover bg-center w-full h-full bgafter"></div>
+  </div>
+  
+  <div class="relative md:col-span-3   md:w-full w-60 h-[250px]">
+    <div class="bg-gatito bg-cover bg-center w-full h-full bgafter"></div>
+  </div>
+ 
+ </section>
 
-    color: white;
-    text-align: center;
-    padding: 10px;
-    transform: translateY(100%); /* Inicialmente oculto fuera del div */
-    transition: transform 0.3s ease-in-out; /* Efecto suave */
-  }
-}
-  .grid-contain {
-    display: grid;
-    grid-template-rows: 1fr auto;
-  }
-  .galeria {
-    width: 100%;
+  </SectionComponents>
+
+
+  <style>
+    @media(max-width: 768px){
+      .flexx {
     display: flex;
-    overflow-x: auto;
-    gap: 1rem;
-    
-}
+    flex-direction: row; /* Cambia la dirección a horizontal */
+    overflow-x: auto;    /* Permite desplazamiento horizontal */
+    overflow-y: hidden;  /* Elimina el desplazamiento vertical */
+    gap: 16px;           /* Asegura espacio entre los elementos */
+    width: 100%;
+  }
+  .flexx > div {
+    flex: 0 0 auto;       /* Cada elemento mantiene su tamaño */
+    width: 80%;           /* Ajusta el ancho para que se vea bien en móvil */
+  }
+    }
 
-.img-galery {
-    flex-shrink: 0;  
-    width: 800px;  
-    height: 400px;
-    border-radius: 30px;
-    background-position: center;
-    background-size: cover;  
-    scroll-snap-align: start;  
-}
 
-  .bgafter::after {
+    .bgafter::after {
     content: "";
     position: absolute;
     bottom: 0;
@@ -141,27 +56,4 @@ import YoutubeIcon from "./YoutubeIcon.astro";
     background: linear-gradient(to top, #1d1f1e 0%, rgba(29, 31, 30, 0) 100%);
     pointer-events: none;
   }
-
-
-  
-
-  .img-galery:hover .mostrar {
-    transform: translateY(0); /* Aparece al hacer hover */
-  }
-</style>
-
-<script>
-  const imgGalery = document.querySelectorAll(".img-galery");
-
-  imgGalery.forEach((galery) => {
-    const texto = galery.querySelector(".mostrar") as HTMLElement; // Aseguramos que es un elemento HTML
-
-    galery.addEventListener("mouseover", () => {
-      if (texto) texto.style.display = "block"; // Ahora TypeScript no marcará error
-    });
-
-    galery.addEventListener("mouseout", () => {
-      if (texto) texto.style.display = "none";
-    });
-  });
-</script>
+  </style>
